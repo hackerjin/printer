@@ -54,7 +54,7 @@ static void report_device_state()
 void report_task(void* arg)
 {
     
-    printf("寮�濮嬭繍琛屾姤鍛婁换鍔n");
+    printf("开始运行报告任务\n");
     init_device_state();
     while(1)
     {

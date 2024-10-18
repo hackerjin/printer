@@ -4,8 +4,8 @@
 #include "cmsis_os.h"
 #include "tim.h"
 /*
-4step è¡Œè¿›ä¸€ç‚¹è¡Œ
-å¯¹åº”PIN
+4step ĞĞ½øÒ»µãĞĞ
+¶ÔÓ¦PIN
 A- A B- B
 0  1 1  0
 0  0 1  0
@@ -68,7 +68,7 @@ void motor_start()
         osTimerDef(conti_move_timer,conti_move);
         conti_move_timer_handle =  osTimerCreate(osTimer(conti_move_timer),osTimerPeriodic,NULL);
 	}
-    //æ¯2æ¯«ç§’ç§»åŠ¨ä¸€æ¬¡
+    //Ã¿2ºÁÃëÒÆ¶¯Ò»´Î
 	osTimerStart(conti_move_timer_handle,2); 
 }
 

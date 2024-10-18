@@ -15,10 +15,10 @@ extern UART_HandleTypeDef huart2;
 
 extern void set_read_ble_finish(bool finish);
 
-//ATæŒ‡ä»¤
+//ATÖ¸Áî
 char *ble_enter_at_mode = "+++";
-char *ble_close_status = "AT+STATUS=0\r\n"; //å…³é—­è®¾å¤‡çŠ¶æ€æ˜¾ç¤º
-char *ble_set_name = "AT+NAME=Mini-Printer\r\n"; //OK å¤§å†™ï¼Ÿ
+char *ble_close_status = "AT+STATUS=0\r\n"; //¹Ø±ÕÉè±¸×´Ì¬ÏÔÊ¾
+char *ble_set_name = "AT+NAME=Mini-Printer\r\n"; //OK ´óĞ´£¿
 char *ble_exit_at_mode = "AT+EXIT\r\n";
 
 typedef enum{
@@ -49,12 +49,12 @@ void init_ble()
         {
             case BLE_INIT_START:
             {   retry_count++;
-                printf("å‘é€è¿›å…¥ATæ¨¡å¼çš„ATæŒ‡ä»¤\n");
+                printf("·¢ËÍ½øÈëATÄ£Ê½µÄATÖ¸Áî\n");
                 HAL_UART_Transmit(&huart2,(uint8_t*)ble_enter_at_mode,strlen(ble_enter_at_mode),1000); 
                 if(retry_count == 10)
                 {
                   retry_count = 0;
-                  printf("é‡å¤è¿›å…¥ATæ¨¡å¼å¤±è´¥\n"); 
+                  printf("ÖØ¸´½øÈëATÄ£Ê½Ê§°Ü\n"); 
                   
                 }
                 break;
@@ -63,12 +63,12 @@ void init_ble()
             case BLE_IN_AT_MODE:
             {   
                 retry_count++;
-                printf("å‘é€å…³é—­çŠ¶æ€æ˜¾ç¤ºçš„ATæŒ‡ä»¤\n");
+                printf("·¢ËÍ¹Ø±Õ×´Ì¬ÏÔÊ¾µÄATÖ¸Áî\n");
                 HAL_UART_Transmit(&huart2,(uint8_t*)ble_close_status,strlen(ble_close_status),1000); 
                 if(retry_count == 10)
                 {
                   retry_count = 0;
-                  printf("å…³é—­çŠ¶æ€æ˜¾ç¤ºå¤±è´¥\n"); 
+                  printf("¹Ø±Õ×´Ì¬ÏÔÊ¾Ê§°Ü\n"); 
                   
                 }
                 break;
@@ -77,12 +77,12 @@ void init_ble()
             case BLE_CLOSE_STATUS:
             {   
                 retry_count++;
-                printf("å‘é€è®¾ç½®è®¾å¤‡åçš„ATæŒ‡ä»¤\n");
+                printf("·¢ËÍÉèÖÃÉè±¸ÃûµÄATÖ¸Áî\n");
                 HAL_UART_Transmit(&huart2,(uint8_t*)ble_set_name,strlen(ble_set_name),1000); 
                 if(retry_count == 10)
                 {
                   retry_count = 0;
-                  printf("è®¾ç½®è®¾å¤‡åå¤±è´¥\n"); 
+                  printf("ÉèÖÃÉè±¸ÃûÊ§°Ü\n"); 
                   
                 }
                 break;
@@ -91,12 +91,12 @@ void init_ble()
             case BLE_SET_NAME:
             {   
                 retry_count++;
-                printf("å‘é€é€€å‡ºATæ¨¡å¼çš„ATæŒ‡ä»¤\n");
+                printf("·¢ËÍÍË³öATÄ£Ê½µÄATÖ¸Áî\n");
                 HAL_UART_Transmit(&huart2,(uint8_t*)ble_exit_at_mode,strlen(ble_exit_at_mode),1000); 
                 if(retry_count == 10)
                 {
                   retry_count = 0;
-                  printf("é€€å‡ºATæ¨¡å¼å¤±è´¥\n"); 
+                  printf("ÍË³öATÄ£Ê½Ê§°Ü\n"); 
                   
                 }
                 break;
@@ -105,7 +105,7 @@ void init_ble()
             case BLE_EXIT_AT_MODE:
             { 
                 cur_step = BLE_RUN;
-                printf("è“ç‰™åˆå§‹åŒ–æˆåŠŸ\n");
+                printf("À¶ÑÀ³õÊ¼»¯³É¹¦\n");
                 break;
             }
             default:
@@ -133,10 +133,10 @@ void ble_data_process(uint8_t ble_data)
     
     ble_buffer[cur_index] = ble_data;
     
-    //åªæœ‰åœ¨æ­£å¼è¿è¡Œå‰ï¼Œå°†ble_bufferä¸­çš„æ•°æ®è§£é‡Šä¸ºå­—ç¬¦ï¼Œä¹‹ååˆ™å°†å…¶è§£é‡Šä¸ºæ•°å€¼
+    //Ö»ÓĞÔÚÕıÊ½ÔËĞĞÇ°£¬½«ble_bufferÖĞµÄÊı¾İ½âÊÍÎª×Ö·û£¬Ö®ºóÔò½«Æä½âÊÍÎªÊıÖµ
     if(cur_step != BLE_RUN)
     {
-        //å¦‚æœæ¥è‡ªè“ç‰™çš„å›å¤ä¸­å«æœ‰okï¼Œåˆ™è¯´æ˜ATæ“ä½œæˆåŠŸ,å¹¶ä¸”éœ€è¦æ¸…ç©ºç¼“å­˜ã€‚å¦åˆ™ä¸‹ä¸€æ­¥æ“ä½œæ˜¯å¦è¿”å›äº†OKæ— æ³•åˆ¤æ–­
+        //Èç¹ûÀ´×ÔÀ¶ÑÀµÄ»Ø¸´ÖĞº¬ÓĞok£¬ÔòËµÃ÷AT²Ù×÷³É¹¦,²¢ÇÒĞèÒªÇå¿Õ»º´æ¡£·ñÔòÏÂÒ»²½²Ù×÷ÊÇ·ñ·µ»ØÁËOKÎŞ·¨ÅĞ¶Ï
         if(strstr((char*)ble_buffer,"OK\r\n"))
         {
             cur_index = 0;
@@ -148,13 +148,13 @@ void ble_data_process(uint8_t ble_data)
                 case BLE_INIT_START:
                     retry_count = 0;
                     cur_step = BLE_IN_AT_MODE;
-                    printf("æˆåŠŸè¿›å…¥ATæ¨¡å¼\n");
+                    printf("³É¹¦½øÈëATÄ£Ê½\n");
                     break;
                 case BLE_IN_AT_MODE:
                 { 
                     retry_count = 0;
                     cur_step = BLE_CLOSE_STATUS;
-                    printf("å…³é—­çŠ¶æ€æ˜¾ç¤ºæˆåŠŸ\n");
+                    printf("¹Ø±Õ×´Ì¬ÏÔÊ¾³É¹¦\n");
                     break;
                     
                 }
@@ -162,7 +162,7 @@ void ble_data_process(uint8_t ble_data)
                 { 
                     retry_count = 0;
                     cur_step = BLE_SET_NAME;
-                    printf("è®¾ç½®è®¾å¤‡åç§°æˆåŠŸ\n");
+                    printf("ÉèÖÃÉè±¸Ãû³Æ³É¹¦\n");
                     break;
                     
                 }
@@ -170,7 +170,7 @@ void ble_data_process(uint8_t ble_data)
                 { 
                     retry_count = 0;
                     cur_step = BLE_EXIT_AT_MODE;
-                    printf("é€€å‡ºATæ¨¡å¼æˆåŠŸ\n");
+                    printf("ÍË³öATÄ£Ê½³É¹¦\n");
                     break;
                     
                 }
@@ -190,7 +190,7 @@ void ble_data_process(uint8_t ble_data)
         
   
     }
-    //è“ç‰™åˆå§‹åŒ–æˆåŠŸä¹‹åçš„æ•°æ®å¤„ç†
+    //À¶ÑÀ³õÊ¼»¯³É¹¦Ö®ºóµÄÊı¾İ´¦Àí
     else
     {
         if(ble_data == 0xa6)
@@ -198,20 +198,19 @@ void ble_data_process(uint8_t ble_data)
         else
             end_byte_num = 0;
         
-        //æ”¶åˆ°ä¸æœŸæœ›çš„çŠ¶æ€æ•°æ®ï¼Œæ¸…ç©º
+        //ÊÕµ½²»ÆÚÍûµÄ×´Ì¬Êı¾İ£¬Çå¿Õ
         if(strstr((char*)ble_buffer, "CONNECTED") || strstr((char*)ble_buffer, "DISCONNECTED") || strstr((char*)ble_buffer, "DEVICE ERROR"))
         {
-           printf("æ— å…³çŠ¶æ€ä¿¡æ¯ä¸º%s\n",(char*)ble_buffer);
-           printf("æ¸…é™¤æ— å…³çŠ¶æ€ä¿¡æ¯\n");
+           printf("ÎŞ¹Ø×´Ì¬ĞÅÏ¢Îª%s\n",(char*)ble_buffer);
+           printf("Çå³ıÎŞ¹Ø×´Ì¬ĞÅÏ¢\n");
            cur_index = 0;
            memset(ble_buffer,0,sizeof(ble_buffer));
                     
         }       
-        //çƒ­å¯†åº¦è®¾ç½®æˆ–è€…å›¾ç‰‡æ•°æ®ä¼ è¾“ç»“æŸ
+        //ÈÈÃÜ¶ÈÉèÖÃ»òÕßÍ¼Æ¬Êı¾İ´«Êä½áÊø
         else if(cur_index == 4 && (ble_buffer[0] == 0xa5 && ble_buffer[1] == 0xa5 && ble_buffer[2] == 0xa5 && ble_buffer[3] == 0xa5) )
-            
         {
-            printf("å½“å‰indexä¸º%u,æ•°æ®ä¸º%X\n",cur_index,ble_data);
+            printf("µ±Ç°indexÎª%u,Êı¾İÎª%X\n",cur_index,ble_data);
             
                
             if(ble_buffer[4] == 1)                 
@@ -220,16 +219,13 @@ void ble_data_process(uint8_t ble_data)
                 set_heat_density(60);
             else
                 set_heat_density(100);
-        
+            
             cur_index = 0;
             memset(ble_buffer,0,sizeof(ble_buffer));
             
-            printf("çƒ­å¯†åº¦è®¾ç½®æˆåŠŸ\n");
-            
-               
-            
+            printf("ÈÈÃÜ¶ÈÉèÖÃ³É¹¦\n");
        }  
-         //ä¸€è¡Œæ•°æ®æ¥æ”¶å®Œæ¯•
+         //Ò»ĞĞÊı¾İ½ÓÊÕÍê±Ï
         else if(cur_index == 47)
         {
             
@@ -249,7 +245,7 @@ void ble_data_process(uint8_t ble_data)
         {
             
             
-            printf("å›¾ç‰‡ä¼ è¾“ç»“æŸï¼Œæ€»è¡Œæ•°ä¸º%u\n",line_count);
+            printf("Í¼Æ¬´«Êä½áÊø£¬×ÜĞĞÊıÎª%u\n",line_count);
             end_byte_num = 0;
             line_count = 0;
             
@@ -267,13 +263,13 @@ void ble_data_process(uint8_t ble_data)
 
 void ble_task(void* arg)
 {
-    printf("å¼€å§‹è¿è¡Œè“ç‰™ä»»åŠ¡\n");
+    printf("¿ªÊ¼ÔËĞĞÀ¶ÑÀÈÎÎñ\n");
     
-    printf("å¼€å§‹åˆå§‹åŒ–è“ç‰™\n");
+    printf("¿ªÊ¼³õÊ¼»¯À¶ÑÀ\n");
     
     init_ble();
     
-    printf("è“ç‰™å¼€å§‹æ¥æ”¶æ•°æ®\n");
+    printf("À¶ÑÀ¿ªÊ¼½ÓÊÕÊı¾İ\n");
     
     while(1)
     {

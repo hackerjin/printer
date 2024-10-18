@@ -4,9 +4,9 @@
 extern ADC_HandleTypeDef hadc1;
 extern device_state g_device_state;
 
-int freq = 2000;    //è®¾ç½®é¢‘ç‡2000kHz
-int channel = 0;    //é€šé“å·ï¼Œå–å€¼0 ~ 15
-int resolution = 8; //åˆ†è¾¨ç‡ï¼Œå–å€¼0~20ï¼Œå ç©ºæ¯”dutyæœ€å¤§å–å€¼ä¸º2^resolution-1
+int freq = 2000;    //ÉèÖÃÆµÂÊ2000kHz
+int channel = 0;    //Í¨µÀºÅ£¬È¡Öµ0 ~ 15
+int resolution = 8; //·Ö±æÂÊ£¬È¡Öµ0~20£¬Õ¼¿Õ±Èduty×î´óÈ¡ÖµÎª2^resolution-1
 
 uint32_t ADC_Value[2];
 
@@ -104,7 +104,7 @@ static float calculate_temp(float Rt)
 {
     float Rp = 30000; // 30k
     float T2 = 273.15 + 25;
-    float Bx = 3950; // Bå€¼
+    float Bx = 3950; // BÖµ
     float Ka = 273.15;
     float temp = 0.0f;
 
@@ -118,10 +118,10 @@ static float get_temp_data()
     float temp = 0.0f;
     float Rt=0;
     float vol=0;
-    //ADCè½¬æ¢ä¸ºç”µå‹ vol=AD/4096*VCC
+    //ADC×ª»»ÎªµçÑ¹ vol=AD/4096*VCC
     vol=(float)ADC_Value[1]*3.3f/4096;
     //printf("ADC temperatrue analog value = %f\n",vol);
-    //ç”µå‹è½¬æ¢ä¸ºé˜»å€¼ åŸç†å›¾ä¸º10k 1%ç²¾åº¦  vol/VCC=Rt/(R+Rt)  vol/3.3=Rt/(10000+Rt)
+    //µçÑ¹×ª»»Îª×èÖµ Ô­ÀíÍ¼Îª10k 1%¾«¶È  vol/VCC=Rt/(R+Rt)  vol/3.3=Rt/(10000+Rt)
     Rt=(vol*10000)/(3.3-vol);
     //printf("ADC temperatrue Rt = %f\n",Rt);
     temp = calculate_temp(Rt);

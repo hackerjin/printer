@@ -1,0 +1,17 @@
+printer\task.o: ..\..\Core\Src\task.c
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+printer\task.o: D:\MDK\ARM\ARMCC\Bin\..\include\stddef.h
+printer\task.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+printer\task.o: ../../Core/Inc/FreeRTOSConfig.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+printer\task.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h

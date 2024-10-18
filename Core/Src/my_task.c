@@ -16,34 +16,34 @@ void start_tasks()
 {
     
      xTaskCreate(
-        button_task,  // Д╩╩Е┼║Е┤╫Ф∙╟
-        "button_task", // Д╩╩Е┼║Е░█
-        128,         // Д╩╩Е┼║Ф═┬
-        NULL,         // Д╩╩Е┼║Е▐┌Ф∙╟
-        0,            // Д╩╩Е┼║Д╪≤Е┘┬Г╨╖, with 3 (configMAX_PRIORITIES - 1) Ф≤╞Ф°─И╚≤Г └О╪▄0Ф≤╞Ф°─Д╫▌Г └.
-        NULL          // Д╩╩Е┼║Е▐╔Ф÷└
+        button_task,  // хннЯ╨╞йЩ
+        "button_task", // хннЯцШ
+        128,         // хннЯу╩
+        NULL,         // хннЯ╡нйЩ
+        0,            // хннЯсеох╪╤, with 3 (configMAX_PRIORITIES - 1) йгвН╦ъ╣дё╛0йгвН╣м╣д.
+        NULL          // хннЯ╬Д╠З
     );
     
    
      xTaskCreate(
-        report_task,  // Д╩╩Е┼║Е┤╫Ф∙╟
-        "report_task", // Д╩╩Е┼║Е░█
-        128,         // Д╩╩Е┼║Ф═┬
-        NULL,         // Д╩╩Е┼║Е▐┌Ф∙╟
-        3,            // Д╩╩Е┼║Д╪≤Е┘┬Г╨╖, with 3 (configMAX_PRIORITIES - 1) Ф≤╞Ф°─И╚≤Г └О╪▄0Ф≤╞Ф°─Д╫▌Г └.
-        NULL          // Д╩╩Е┼║Е▐╔Ф÷└
+        report_task,  // хннЯ╨╞йЩ
+        "report_task", // хннЯцШ
+        128,         // хннЯу╩
+        NULL,         // хннЯ╡нйЩ
+        3,            // хннЯсеох╪╤, with 3 (configMAX_PRIORITIES - 1) йгвН╦ъ╣дё╛0йгвН╣м╣д.
+        NULL          // хннЯ╬Д╠З
     );
     
     
    
     
     xTaskCreate(
-        ble_task,  // Д╩╩Е┼║Е┤╫Ф∙╟
-        "ble_task", // Д╩╩Е┼║Е░█
-        256,         // Д╩╩Е┼║Ф═┬
-        NULL,         // Д╩╩Е┼║Е▐┌Ф∙╟
-        5,            // Д╩╩Е┼║Д╪≤Е┘┬Г╨╖, with 3 (configMAX_PRIORITIES - 1) Ф≤╞Ф°─И╚≤Г └О╪▄0Ф≤╞Ф°─Д╫▌Г └.
-        NULL          // Д╩╩Е┼║Е▐╔Ф÷└
+        ble_task,  // хннЯ╨╞йЩ
+        "ble_task", // хннЯцШ
+        256,         // хннЯу╩
+        NULL,         // хннЯ╡нйЩ
+        5,            // хннЯсеох╪╤, with 3 (configMAX_PRIORITIES - 1) йгвН╦ъ╣дё╛0йгвН╣м╣д.
+        NULL          // хннЯ╬Д╠З
     );
     
     

@@ -21,7 +21,7 @@ void GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(VH_EN_GPIO_Port, VH_EN_Pin, GPIO_PIN_RESET);
 
-  //Ф▄┴И■╝Ф▌╔Д╦┼Ф▀┴Г■╣И≤╩О╪▄И╩≤Х╝╓Ф≤╞И╚≤Г■╣Е╧ЁО╪▄Ф▄┴Д╦▀Е┬≥Д╦╨Д╫▌Г■╣Е╧Ё
+  //╟╢╪Э╫сиою╜╣ГвХё╛д╛хойг╦ъ╣Гф╫ё╛╟╢обтРн╙╣м╣Гф╫
   GPIO_InitStruct.Pin = BTN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
@@ -47,7 +47,7 @@ void GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  //Г╪╨Г╨╦Фё─Ф╣▀Г╚╞Е▐ё
+  //х╠ж╫╪Л╡Б╤к©з
   GPIO_InitStruct.Pin = VHINT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;

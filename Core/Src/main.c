@@ -34,7 +34,7 @@ int main(void)
   USART2_UART_Init();
   TIM1_Init(); 
   
-  printf("鎵撳嵃鏈哄紑濮嬭繍琛孿n");
+  printf("打印机开始运行\n");
 
   HAL_UART_Receive_IT(&huart2,&ble_data,1);
     

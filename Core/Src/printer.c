@@ -7,22 +7,22 @@
 #include "cmsis_os.h"
 
 
-#define PRINT_TIME 2600         //æ‰“å°åŠ çƒ­æ—¶é—´
-#define PRINT_END_TIME 200      //å†·å´æ—¶é—´
-#define LAT_TIME 1              //æ•°æ®é”å­˜æ—¶é—´
+#define PRINT_TIME 2600         //´òÓ¡¼ÓÈÈÊ±¼ä
+#define PRINT_END_TIME 200      //ÀäÈ´Ê±¼ä
+#define LAT_TIME 1              //Êı¾İËø´æÊ±¼ä
 
 
 extern void spi_transmit(uint8_t* data,uint8_t len);
 extern xQueueHandle print_queue;
 
-// çƒ­å¯†åº¦
+// ÈÈÃÜ¶È
 uint8_t heat_density = 30;
 
 float add_time[6] = {0};
 
 void set_heat_density(uint8_t density)
 {
-    printf("æ‰“å°å¯†åº¦è®¾ç½® %d\n", density);
+    printf("´òÓ¡ÃÜ¶ÈÉèÖÃ %d\n", density);
     heat_density = density;
 }
 
@@ -79,7 +79,7 @@ static void deinit_print()
 
 static void send_one_line(uint8_t *data)
 {
-    //è®¡ç®—åŠ çƒ­æ—¶é—´
+    //¼ÆËã¼ÓÈÈÊ±¼ä
     for(int stb_num = 0; stb_num < 6;stb_num++)
     {
         float temp_time = 0;
@@ -94,10 +94,10 @@ static void send_one_line(uint8_t *data)
         
     }
     
-    //é€šè¿‡spiä¼ è¾“æ•°æ®
+    //Í¨¹ıspi´«ÊäÊı¾İ
     spi_transmit(data,48);
     
-    //ä¼ è¾“æ•°æ®ä¹‹åï¼Œè¿›è¡Œé”å­˜
+    //´«ÊäÊı¾İÖ®ºó£¬½øĞĞËø´æ
     latch_write(RESET);
     us_delay(1);
     latch_write(SET);

@@ -30,7 +30,7 @@ bool printer_test = false;
 
 void key_click_handle()
 {
-    printf("Button 单击!\n");
+    printf("Button ����!\n");
     printer_test = true;
     
 }
@@ -38,17 +38,17 @@ void key_click_handle()
 void key_long_click_handle()
 {
     
-    printf("Button 长按!\n");
+    printf("Button ����!\n");
     
     device_state *pdevice = get_device_state();
             
-    // 不缺纸且不在打印中才执行
+    // ��ȱֽ�Ҳ��ڴ�ӡ�в�ִ��
     if (pdevice->paper_state == PAPER_STATUS_NORMAL)
     {
         if (pdevice->printer_state == PRINTER_STATUS_FINISH ||
             pdevice->printer_state == PRINTER_STATUS_INIT)
         {
-            printf("开始走纸\n");
+            printf("��ʼ��ֽ\n");
             motor_start();
         }
        
@@ -58,7 +58,7 @@ void key_long_click_handle()
 void key_long_click_free_handle()
 {
     
-    printf("停止走纸\n");
+    printf("ֹͣ��ֽ\n");
     motor_stop();
 }
 
@@ -70,26 +70,26 @@ void button_scan()
     
   if(keyIsPress == false)
   { 
-    //检测到按下
+    //��⵽����
     if(btnRead() == 0)
     {
-      //进行延时防抖
+      //������ʱ����
       vTaskDelay(10);
-      //如果再次检测到则说明按下了
+      //����ٴμ�⵽��˵��������
       if(btnRead() == 0)
       {
         keyIsPress = true;
-        //记录当前tick
+        //��¼��ǰtick
         clicktime = millis();
       }
     }
   }
   
   
-  //按下的情况下，检测什么时候放开
+  //���µ�����£����ʲôʱ��ſ�
   if(keyIsPress == true)
   {
-    //已经放开按键
+    //�Ѿ��ſ�����
     if(btnRead() == 1)
     {
       if(millis() - clicktime > SHORT_PRESS_TIME)
@@ -106,7 +106,7 @@ void button_scan()
       }
       keyIsPress = false;
     }
-    //没有放开按键
+    //û�зſ�����
     else
     {
       if(millis() - clicktime > SHORT_PRESS_TIME)
@@ -128,7 +128,7 @@ void button_scan()
 
 void button_task(void* arg)
 {
-    printf("开启运行按键任务\n");
+    printf("�������а�������\n");
     
     unsigned int  count = 0;
     while(1)

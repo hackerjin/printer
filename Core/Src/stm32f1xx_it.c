@@ -86,7 +86,7 @@ void DebugMon_Handler(void)
 }
 
 
-//ç¼ºçº¸å¤–éƒ¨ä¸­æ–­æ£€æµ‹
+//È±Ö½Íâ²¿ÖĞ¶Ï¼ì²â
 void EXTI9_5_IRQHandler(void)
 {
 
@@ -94,7 +94,7 @@ void EXTI9_5_IRQHandler(void)
  
 }
 
-//halåº“æ—¶åŸºä¸­æ–­
+//hal¿âÊ±»ùÖĞ¶Ï
 void TIM4_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM4_IRQn 0 */
@@ -106,7 +106,7 @@ void TIM4_IRQHandler(void)
   /* USER CODE END TIM4_IRQn 1 */
 }
 
-//æ¥æ”¶è“ç‰™æ•°æ®çš„ä¸²å£æ¥æ”¶ä¸­æ–­
+//½ÓÊÕÀ¶ÑÀÊı¾İµÄ´®¿Ú½ÓÊÕÖĞ¶Ï
 void USART2_IRQHandler(void)
 {
 
