@@ -153,22 +153,17 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ble_buffer[cur_index]</ItemText>
+          <ItemText>temp_time</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>cur_index</ItemText>
+          <ItemText>print_buffer</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ble_buffer</ItemText>
-        </Ww>
-        <Ww>
-          <count>3</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>ble_buffer</ItemText>
+          <ItemText>add_time</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>

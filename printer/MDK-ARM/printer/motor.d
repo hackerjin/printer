@@ -1,6 +1,6 @@
 printer\motor.o: ..\..\Core\Src\motor.c
 printer\motor.o: ..\..\Core\Src\motor.h
-printer\motor.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+printer\motor.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 printer\motor.o: ../../Core/Inc/main.h
 printer\motor.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 printer\motor.o: ../../Core/Inc/stm32f1xx_hal_conf.h
@@ -15,7 +15,7 @@ printer\motor.o: ../../Drivers/CMSIS/Include/cmsis_armcc.h
 printer\motor.o: ../../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 printer\motor.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 printer\motor.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-printer\motor.o: D:\MDK\ARM\ARMCC\Bin\..\include\stddef.h
+printer\motor.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 printer\motor.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 printer\motor.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 printer\motor.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h

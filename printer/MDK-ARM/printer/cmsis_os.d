@@ -1,9 +1,9 @@
 printer\cmsis_os.o: ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c
-printer\cmsis_os.o: D:\MDK\ARM\ARMCC\Bin\..\include\string.h
+printer\cmsis_os.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
 printer\cmsis_os.o: ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 printer\cmsis_os.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-printer\cmsis_os.o: D:\MDK\ARM\ARMCC\Bin\..\include\stddef.h
-printer\cmsis_os.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+printer\cmsis_os.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+printer\cmsis_os.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 printer\cmsis_os.o: ../../Core/Inc/FreeRTOSConfig.h
 printer\cmsis_os.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 printer\cmsis_os.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

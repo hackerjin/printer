@@ -1,8 +1,8 @@
 printer\list.o: ../../Middlewares/Third_Party/FreeRTOS/Source/list.c
-printer\list.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdlib.h
+printer\list.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 printer\list.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-printer\list.o: D:\MDK\ARM\ARMCC\Bin\..\include\stddef.h
-printer\list.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+printer\list.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+printer\list.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 printer\list.o: ../../Core/Inc/FreeRTOSConfig.h
 printer\list.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 printer\list.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

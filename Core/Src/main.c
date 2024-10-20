@@ -17,6 +17,8 @@ extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 extern uint8_t ble_data;
 
+void init_print_queue();
+
 int main(void)
 {
 
@@ -34,10 +36,10 @@ int main(void)
   USART2_UART_Init();
   TIM1_Init(); 
   
-  printf("打印机开始运行\n");
+  init_print_queue();
 
   HAL_UART_Receive_IT(&huart2,&ble_data,1);
-    
+  
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
   

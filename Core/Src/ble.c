@@ -50,7 +50,7 @@ void init_ble()
             case BLE_INIT_START:
             {   retry_count++;
                 printf("发送进入AT模式的AT指令\n");
-                HAL_UART_Transmit(&huart2,(uint8_t*)ble_enter_at_mode,strlen(ble_enter_at_mode),1000); 
+                HAL_UART_Transmit(&huart2,(uint8_t*)ble_enter_at_mode,strlen(ble_enter_at_mode),100000); 
                 if(retry_count == 10)
                 {
                   retry_count = 0;
@@ -64,7 +64,7 @@ void init_ble()
             {   
                 retry_count++;
                 printf("发送关闭状态显示的AT指令\n");
-                HAL_UART_Transmit(&huart2,(uint8_t*)ble_close_status,strlen(ble_close_status),1000); 
+                HAL_UART_Transmit(&huart2,(uint8_t*)ble_close_status,strlen(ble_close_status),100000); 
                 if(retry_count == 10)
                 {
                   retry_count = 0;
@@ -78,7 +78,7 @@ void init_ble()
             {   
                 retry_count++;
                 printf("发送设置设备名的AT指令\n");
-                HAL_UART_Transmit(&huart2,(uint8_t*)ble_set_name,strlen(ble_set_name),1000); 
+                HAL_UART_Transmit(&huart2,(uint8_t*)ble_set_name,strlen(ble_set_name),100000); 
                 if(retry_count == 10)
                 {
                   retry_count = 0;
@@ -92,7 +92,7 @@ void init_ble()
             {   
                 retry_count++;
                 printf("发送退出AT模式的AT指令\n");
-                HAL_UART_Transmit(&huart2,(uint8_t*)ble_exit_at_mode,strlen(ble_exit_at_mode),1000); 
+                HAL_UART_Transmit(&huart2,(uint8_t*)ble_exit_at_mode,strlen(ble_exit_at_mode),100000); 
                 if(retry_count == 10)
                 {
                   retry_count = 0;
@@ -117,7 +117,7 @@ void init_ble()
         if(cur_step == BLE_RUN)
             break;
         
-        vTaskDelay(1000);       
+        vTaskDelay(1000);
     }
      
 }
@@ -228,9 +228,8 @@ void ble_data_process(uint8_t ble_data)
          //一行数据接收完毕
         else if(cur_index == 47)
         {
-            
-            line_count++;
             xQueueSendFromISR(print_queue,ble_buffer,0);
+            line_count++;
             cur_index = 0;
             memset(ble_buffer,0,sizeof(ble_buffer));
         }   
@@ -261,7 +260,7 @@ void ble_data_process(uint8_t ble_data)
 }
 
 
-void ble_task(void* arg)
+void ble_task(void *arg)
 {
     printf("开始运行蓝牙任务\n");
     
@@ -276,25 +275,6 @@ void ble_task(void* arg)
         
         vTaskDelay(1000);
         
-        
     }
-        
-        
-        
-    
-    
-    
     
 }
-
-
-
-
-
-
-
-
-
-
-
-

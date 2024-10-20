@@ -7,14 +7,14 @@ printer\adc.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
 printer\adc.o: ../../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 printer\adc.o: ../../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 printer\adc.o: ../../Drivers/CMSIS/Include/core_cm3.h
-printer\adc.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+printer\adc.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 printer\adc.o: ../../Drivers/CMSIS/Include/cmsis_version.h
 printer\adc.o: ../../Drivers/CMSIS/Include/cmsis_compiler.h
 printer\adc.o: ../../Drivers/CMSIS/Include/cmsis_armcc.h
 printer\adc.o: ../../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 printer\adc.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 printer\adc.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-printer\adc.o: D:\MDK\ARM\ARMCC\Bin\..\include\stddef.h
+printer\adc.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 printer\adc.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 printer\adc.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 printer\adc.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h

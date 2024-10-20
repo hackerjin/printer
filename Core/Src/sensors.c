@@ -1,6 +1,6 @@
 #include "main.h"
 #include "device.h"
-
+#include <math.h>
 extern ADC_HandleTypeDef hadc1;
 extern device_state g_device_state;
 
@@ -142,13 +142,20 @@ static void read_temp()
 }
 
 
-
+static void read_paper_status()
+{
+    if(!HAL_GPIO_ReadPin(VHINT_GPIO_Port,VHINT_Pin))
+        set_device_paper_status(PAPER_STATUS_NORMAL);
+    else
+        set_device_paper_status(PAPER_STATUS_LACK);
+}
 
 void read_sensors()
 {
     get_sensors_data();
     read_bat();
-    read_temp;
+    read_temp();
+    read_paper_status();
     
     
 }

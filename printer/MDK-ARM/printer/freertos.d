@@ -1,7 +1,7 @@
 printer\freertos.o: ../../Core/Src/freertos.c
 printer\freertos.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-printer\freertos.o: D:\MDK\ARM\ARMCC\Bin\..\include\stddef.h
-printer\freertos.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+printer\freertos.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+printer\freertos.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 printer\freertos.o: ../../Core/Inc/FreeRTOSConfig.h
 printer\freertos.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 printer\freertos.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

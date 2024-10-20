@@ -7,14 +7,14 @@ printer\sensors.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
 printer\sensors.o: ../../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 printer\sensors.o: ../../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 printer\sensors.o: ../../Drivers/CMSIS/Include/core_cm3.h
-printer\sensors.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+printer\sensors.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 printer\sensors.o: ../../Drivers/CMSIS/Include/cmsis_version.h
 printer\sensors.o: ../../Drivers/CMSIS/Include/cmsis_compiler.h
 printer\sensors.o: ../../Drivers/CMSIS/Include/cmsis_armcc.h
 printer\sensors.o: ../../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 printer\sensors.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 printer\sensors.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-printer\sensors.o: D:\MDK\ARM\ARMCC\Bin\..\include\stddef.h
+printer\sensors.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 printer\sensors.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 printer\sensors.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 printer\sensors.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
@@ -32,4 +32,5 @@ printer\sensors.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 printer\sensors.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 printer\sensors.o: ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 printer\sensors.o: ..\..\Core\Src\device.h
-printer\sensors.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+printer\sensors.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+printer\sensors.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h

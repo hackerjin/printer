@@ -1,7 +1,7 @@
 printer\port.o: ../../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c
 printer\port.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-printer\port.o: D:\MDK\ARM\ARMCC\Bin\..\include\stddef.h
-printer\port.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+printer\port.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+printer\port.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 printer\port.o: ../../Core/Inc/FreeRTOSConfig.h
 printer\port.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 printer\port.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

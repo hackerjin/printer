@@ -1,8 +1,8 @@
 printer\timers.o: ../../Middlewares/Third_Party/FreeRTOS/Source/timers.c
-printer\timers.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdlib.h
+printer\timers.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 printer\timers.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-printer\timers.o: D:\MDK\ARM\ARMCC\Bin\..\include\stddef.h
-printer\timers.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+printer\timers.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+printer\timers.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 printer\timers.o: ../../Core/Inc/FreeRTOSConfig.h
 printer\timers.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 printer\timers.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

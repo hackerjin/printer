@@ -7,13 +7,16 @@
 
 extern void button_task(void* arg);
 
-extern void ble_task(void* arg);
-
 extern void report_task(void* arg);
 
+extern void print_task(void* arg);
+
+extern void ble_task(void* arg);
 
 void start_tasks()
 {
+    
+  
     
      xTaskCreate(
         button_task,  // 任务函数
@@ -35,9 +38,7 @@ void start_tasks()
     );
     
     
-   
-    
-    xTaskCreate(
+   xTaskCreate(
         ble_task,  // 任务函数
         "ble_task", // 任务名
         256,         // 任务栈
@@ -46,7 +47,15 @@ void start_tasks()
         NULL          // 任务句柄
     );
     
-    
+   
+    xTaskCreate(
+        print_task,  // 任务函数
+        "print_task", // 任务名
+        256,         // 任务栈
+        NULL,         // 任务参数
+        6,            // 任务优先级, with 3 (configMAX_PRIORITIES - 1) 是最高的，0是最低的.
+        NULL          // 任务句柄
+    );
     
     
 }

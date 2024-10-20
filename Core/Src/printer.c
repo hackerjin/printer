@@ -5,7 +5,7 @@
 #include "tim.h"
 #include "FreeRTOS.h"
 #include "cmsis_os.h"
-
+#include <stdbool.h>
 
 #define PRINT_TIME 2600         //打印加热时间
 #define PRINT_END_TIME 200      //冷却时间
@@ -110,7 +110,8 @@ static void  print_line()
     for(int i=0;i< 6;i++)
     {
         stb_write(i,SET);
-        us_delay ( (PRINT_TIME + add_time[i]) *  (float)heat_density/100  );
+        //us_delay ( (PRINT_TIME + add_time[i]) *  ((double)heat_density/100));
+        us_delay(5000);
         stb_write(i, RESET);
         us_delay(PRINT_END_TIME);
     }
@@ -122,33 +123,39 @@ void print_and_move(uint8_t* data)
 {
    
     send_one_line(data);
+    
+    motor_run_steps(1);
     print_line();
-    
-    motor_run_steps(4);
+    motor_run_steps(3);
     
 }
 
-void print_in_time()
+uint8_t print_buffer[48];
+
+
+void print_task(void* arg)
 {        
-
-   
-
-
-
+    printf("开始运行打印任务\n");
+    bool is_start = false;
+    while(1)
+    {
+        if(xQueueReceive(print_queue,print_buffer,5000))
+        {
+            if(!is_start)
+            {          
+                //init_print();
+                is_start = true;
+            }
+            print_and_move(print_buffer);
+        }
+        else
+        {
+           if(is_start)
+               deinit_print();
+           is_start = false;
+            vTaskDelay(100);
+        }
+    }
     
-        
 }
 
-
-
-void print(uint8_t* data ,uint16_t len)
-{
-   for(int i= 0; i< len /48; i++)
-   {
-      
-       print_and_move(data + i*48);
-       
-   }
-    
-    
-}

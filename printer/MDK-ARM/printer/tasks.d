@@ -1,9 +1,9 @@
 printer\tasks.o: ../../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
-printer\tasks.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdlib.h
-printer\tasks.o: D:\MDK\ARM\ARMCC\Bin\..\include\string.h
+printer\tasks.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+printer\tasks.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
 printer\tasks.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-printer\tasks.o: D:\MDK\ARM\ARMCC\Bin\..\include\stddef.h
-printer\tasks.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+printer\tasks.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+printer\tasks.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 printer\tasks.o: ../../Core/Inc/FreeRTOSConfig.h
 printer\tasks.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 printer\tasks.o: ../../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
